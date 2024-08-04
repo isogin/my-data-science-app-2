@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Visualization from './pages/Visualization';
+import Statistics from './pages/Statistics';
+import Preprocessing from './pages/Preprocessing';
+import Analysis from './pages/Analysis';
+import Simulation from './pages/Simulation';
+import Quiz from './pages/Quiz';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/visualization" element={<Visualization />} />
+        <Route path="/statistics" element={<Statistics />} />
+        <Route path="/preprocessing" element={<Preprocessing />} />
+        <Route path="/analysis" element={<Analysis />} />
+        <Route path="/simulation" element={<Simulation />} />
+        <Route path="/quiz" element={<Quiz />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
